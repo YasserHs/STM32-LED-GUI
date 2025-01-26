@@ -1,9 +1,5 @@
-# STM32-LED-GUI
-A project to control LEDs connected to an STM32 microcontroller via a desktop GUI. The STM32 firmware communicates with the GUI using USB OTG, allowing users to turn LEDs on/off and set a specific toggle frequency for dynamic lighting effects.
-
 # STM32 USB-OTG LED Control Project
-
-This project demonstrates how to control LEDs on an STM32 microcontroller using USB-OTG communication. The STM32 is configured as a USB device, and communication is handled via the Virtual COM Port (VCP) middleware.
+A project to control LEDs connected to an STM32 microcontroller via a desktop GUI. The STM32 firmware communicates with the GUI using USB OTG, allowing users to turn LEDs on/off and set a specific toggle frequency for dynamic lighting effects.
 
 ---
 
@@ -53,21 +49,27 @@ The STM32 microcontroller is configured to:
 
 ## **Building and Flashing**
 
-### 1. Build the Project
+### 1. Generate Makefile and Create Build Folder
+Run the following command to generate the Makefile and create the build folder:
+```bash
+cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=./cmake/gcc-arm-none-eabi.cmake -S./ -B./build/Debug -G "Unix Makefiles"
+```
+
+### 2. Build the Project
 Build the project using the following command:
 ```bash
 make
 ```
 This will compile the code and generate the binary files in the `build/debug` folder.
 
-### 2. Flash the Firmware
+### 3. Flash the Firmware
 Flash the firmware to your STM32 board using:
 ```bash
 make upload
 ```
 This will flash the code from the `build/debug` folder to your STM32 microcontroller.
 
-### 3. Connect the STM32 to the Host
+### 4. Connect the STM32 to the Host
 Connect the STM32 to your PC via USB. Ensure that the Virtual COM Port driver is properly installed to enable communication.
 
 ---
