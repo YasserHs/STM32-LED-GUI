@@ -1,9 +1,5 @@
-# STM32-LED-GUI
-A project to control LEDs connected to an STM32 microcontroller via a desktop GUI. The STM32 firmware communicates with the GUI using USB OTG, allowing users to turn LEDs on/off and set a specific toggle frequency for dynamic lighting effects.
-
 # STM32 USB-OTG LED Control Project
-
-This project demonstrates how to control LEDs on an STM32 microcontroller using USB-OTG communication. The STM32 is configured as a USB device, and communication is handled via the Virtual COM Port (VCP) middleware.
+A project to control LEDs connected to an STM32 microcontroller via a desktop GUI. The STM32 firmware communicates with the GUI using USB OTG, allowing users to turn LEDs on/off and set a specific toggle frequency for dynamic lighting effects.
 
 ---
 
