@@ -115,6 +115,7 @@ class LEDController(QWidget):
                 json.dump(config, file, indent=4)
             QMessageBox.information(self, "Saved", f"Configuration saved to {file_path}.")
 
+
     def load_configuration(self):
         options = QFileDialog.Options()
         file_path, _ = QFileDialog.getOpenFileName(self, "Load Configuration", "", "JSON Files (*.json)", options=options)
@@ -125,6 +126,13 @@ class LEDController(QWidget):
                 print("Loaded Configuration:")
                 print(json.dumps(config, indent=4))
 
+                # Reset all labels and inputs to their default state before loading new data
+                for led_name, led_data in self.leds.items():
+                    led_data["label"].setText("Off")  # Reset label to "Off"
+                    led_data["button"].setChecked(False)  # Uncheck the button
+                    led_data["input"].setText("")  # Clear the input field
+
+                # Load the new configuration
                 for led_name, led_data in config.items():
                     idx = int(led_name.replace("LED", "")) - 1
                     color = list(self.leds.keys())[idx]

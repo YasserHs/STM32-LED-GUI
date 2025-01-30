@@ -1,0 +1,10 @@
+{
+    "LED1": {
+        "state": true,
+        "time_ms": 1500
+    },
+    "LED3": {
+        "state": true,
+        "time_ms": 350
+    }
+}
